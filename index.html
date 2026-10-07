@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>學測複習小考 詳解｜112學測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E7EBEE; --card:#FDFDFC;
+  --ink:#10202F; --ink-2:#56687A; --ink-3:#7C8B99;
+  --rule:#C6D0D8; --pen:#17457E; --hl:#FFE773; --miss:#A34234;
+  --mono:'IBM Plex Mono',ui-monospace,'SF Mono','Cascadia Mono',Menlo,Consolas,monospace;
+  --read:'Literata',Georgia,'Times New Roman',serif;
+  --han:'PingFang TC','Microsoft JhengHei','Noto Sans TC',system-ui,sans-serif;
+  --maxw:1180px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--han);font-size:16px;line-height:1.75}
+:focus-visible{outline:2px solid var(--pen);outline-offset:3px;border-radius:2px}
+
+.top{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--rule)}
+.top-in{max-width:var(--maxw);margin:0 auto;padding:14px 24px 0}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);margin:0 0 4px}
+.title{font-size:23px;font-weight:600;margin:0;line-height:1.3}
+.meta{font-family:var(--mono);font-size:12px;color:var(--ink-2);margin:4px 0 0;letter-spacing:.04em}
+.bar{display:flex;gap:7px;align-items:center;flex-wrap:wrap;padding:12px 0 11px;margin-top:10px;border-top:1px solid var(--rule)}
+.chip{font-family:var(--mono);font-size:12px;letter-spacing:.04em;border:1px solid var(--rule);background:transparent;color:var(--ink-2);padding:5px 10px;border-radius:999px;cursor:pointer;text-decoration:none;transition:border-color .15s,color .15s,background .15s}
+.chip:hover{border-color:var(--pen);color:var(--pen)}
+.chip.solid{margin-left:auto;border-color:var(--ink);color:var(--ink);font-weight:500}
+.chip.solid:hover{background:var(--ink);color:var(--card)}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:28px 24px 96px;display:grid;gap:36px;grid-template-columns:minmax(0,1fr) 288px}
+@media (max-width:1020px){.wrap{grid-template-columns:minmax(0,1fr);gap:44px}}
+
+.sec{margin:0 0 48px;scroll-margin-top:136px}
+.sec-head{display:flex;align-items:baseline;gap:12px;padding-bottom:9px;border-bottom:2px solid var(--ink);flex-wrap:wrap}
+.sec-num{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--ink-3)}
+.sec-label{font-size:18px;font-weight:600;margin:0}
+.sec-score{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-left:auto}
+.sec-inst{font-size:13.5px;color:var(--ink-2);margin:9px 0 0}
+
+.bank{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:16px 0 0}
+@media (max-width:760px){.bank{grid-template-columns:repeat(2,1fr)}}
+.bank-i{background:var(--card);padding:8px 10px;font-family:var(--read);font-size:14.5px}
+.bank-i span{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-right:5px}
+.bank-i.used{background:#F2F5F6;color:var(--ink-3)}
+
+.passage{background:var(--card);border:1px solid var(--rule);border-left:3px solid var(--ink);padding:22px 26px;margin:18px 0 0;font-family:var(--read);font-size:16.5px;line-height:1.95;color:#1a2836}
+.passage p{margin:0 0 1em}
+.passage p:last-child{margin-bottom:0}
+.blank{display:inline-block;min-width:70px;text-align:center;border:0;border-bottom:1.5px solid var(--ink);font-family:var(--mono);font-size:13px;color:var(--pen);cursor:pointer;background:none;padding:0 4px;line-height:1.4}
+.blank:hover{background:rgba(23,69,126,.07)}
+.blank.filled{font-family:var(--read);font-size:16.5px;color:var(--ink);border-bottom-color:transparent;min-width:0}
+.blank sup{font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-right:2px}
+.zhbtn{display:block;margin:0 0 18px;background:var(--card);border:1px solid var(--rule);border-top:0;width:100%;text-align:left;padding:8px 26px;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;color:var(--pen);cursor:pointer}
+.zhbtn:hover{color:var(--ink)}
+.zhbtn::after{content:' ▾'}
+.zhbtn.on::after{content:' ▴'}
+.zhbox{display:none;background:#F7F9FA;border:1px solid var(--rule);border-top:0;padding:18px 26px;margin:0 0 18px;font-size:15px;line-height:1.95;color:#22323F}
+.zhbox.on{display:block}
+.zhbox p{margin:0 0 .9em}
+.zhbox p:last-child{margin:0}
+
+.q{background:var(--card);border:1px solid var(--rule);margin:14px 0 0;scroll-margin-top:142px}
+.q-top{padding:16px 22px 14px}
+.q-tag{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.q-n{font-family:var(--mono);font-size:13px;font-weight:600}
+.q-kind{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.prompt{font-size:14.5px;line-height:1.85;color:var(--ink-2);margin:0 0 11px;padding-left:11px;border-left:2px solid var(--rule)}
+.stem{font-family:var(--read);font-size:16.5px;line-height:1.85;margin:0 0 13px;color:#1a2836}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:2px 20px}
+@media (max-width:640px){.opts{grid-template-columns:1fr}}
+.opt{display:flex;gap:9px;font-family:var(--read);font-size:15.5px;line-height:1.6;padding:3px 0;color:#243342}
+.opt-k{font-family:var(--mono);font-size:12.5px;color:var(--ink-3);padding-top:2px;flex:none}
+.reveal{display:block;width:100%;text-align:left;margin-top:14px;background:none;border:0;border-top:1px dashed var(--rule);padding:11px 0 0;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--pen);cursor:pointer}
+.reveal:hover{color:var(--ink)}
+.reveal::after{content:' ▾'}
+.q.open .reveal::after{content:' ▴'}
+.q.open .reveal{color:var(--ink-3)}
+
+.body{display:none;border-top:1px solid var(--rule);background:#F7F9FA;padding:18px 22px 20px}
+.q.open .body{display:block}
+.ans{display:flex;align-items:baseline;gap:10px;margin:0 0 13px;flex-wrap:wrap}
+.ans-k{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--ink-3);flex:none;padding-top:2px}
+.ans-v{font-family:var(--read);font-size:18px;font-weight:600}
+.fills{list-style:none;margin:0 0 13px;padding:0}
+.fill{display:flex;gap:11px;align-items:baseline;padding:7px 0;border-bottom:1px dotted var(--rule)}
+.fill-k{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);flex:none;width:26px}
+.fill-w{font-family:var(--read);font-size:17px;font-weight:600;flex:none}
+.fill-n{font-size:13.5px;color:var(--ink-2);line-height:1.7}
+.zh{font-size:15px;line-height:1.85;margin:0 0 14px;color:#22323F}
+.why{font-size:14.5px;line-height:1.85;margin:0 0 4px;color:#22323F;border-top:1px solid var(--rule);padding-top:12px}
+.lines{margin:0;padding:0;list-style:none;border-top:1px solid var(--rule)}
+.line{display:flex;gap:11px;padding:9px 0;border-bottom:1px solid var(--rule);font-size:14.5px;line-height:1.75;color:var(--ink-2)}
+.line-k{font-family:var(--mono);font-size:12.5px;flex:none;width:28px;color:var(--ink-3);padding-top:2px}
+.line.right{color:var(--ink)}
+.line.right .line-k{color:var(--ink);font-weight:600}
+.line.right .line-k::after{content:'✓';display:block;font-size:12px;line-height:1.3}
+.line.wrong .line-k{color:var(--miss);opacity:.85}
+.line.wrong .line-k::after{content:'✗';display:block;font-size:12px;line-height:1.3}
+.evid{margin:15px 0 0;font-family:var(--read);font-size:14.5px;line-height:1.8;color:var(--ink-2);padding-left:13px;border-left:2px solid var(--hl)}
+.evid span{font-family:var(--han);font-size:11px;letter-spacing:.14em;color:var(--ink-3);display:block;margin-bottom:3px}
+
+.hl{background-image:linear-gradient(transparent 12%,var(--hl) 12%,var(--hl) 90%,transparent 90%);background-repeat:no-repeat;background-size:0% 100%;transition:background-size .55s cubic-bezier(.2,.75,.3,1);border-radius:1px}
+.hl.on{background-size:100% 100%}
+
+.sample{margin:15px 0 0;border:1px solid var(--rule);border-left:3px solid var(--ink);background:var(--card);padding:16px 20px}
+.sample p:not(.note-h){font-family:var(--read);font-size:15.5px;line-height:1.9;color:#1a2836;margin:0 0 1em}
+.sample p:last-child{margin-bottom:0}
+.bank.wide{grid-template-columns:1fr}
+.bank.wide .bank-i{font-size:15px;line-height:1.7;padding:10px 14px}
+.note{margin:15px 0 0;border:1px solid var(--rule);background:var(--card);padding:13px 16px}
+.note-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin:0 0 9px}
+.note-i{margin:0;padding:9px 0 0;border-top:1px dotted var(--rule)}
+.note-i:first-of-type{border-top:0;padding-top:0}
+.term{font-family:var(--read);font-size:16px;font-weight:600}
+.pos{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin:0 6px}
+.gloss{font-size:14.5px}
+.ex{font-family:var(--read);font-size:14px;color:var(--ink-2);line-height:1.7;margin:3px 0 0;display:block}
+.ex i{font-family:var(--han);font-style:normal;font-size:13px;color:var(--ink-3);display:block}
+
+.side{position:sticky;top:136px;align-self:start;max-height:calc(100vh - 164px);overflow:auto;padding-right:4px}
+@media (max-width:1020px){.side{position:static;max-height:none;scroll-margin-top:136px}}
+.side-h{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin:0 0 3px}
+.side-t{font-size:16px;font-weight:600;margin:0 0 14px;padding-bottom:10px;border-bottom:2px solid var(--ink)}
+.card-list{margin:0;padding:0;list-style:none}
+.card-item{border-bottom:1px solid var(--rule);padding:11px 0}
+.card-item a{display:block;text-decoration:none;color:inherit}
+.card-item a:hover .term{background:var(--hl)}
+.jump{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);float:right;padding-top:5px}
+.side-note{font-size:12.5px;color:var(--ink-3);line-height:1.7;margin:16px 0 0}
+.foot{max-width:var(--maxw);margin:0 auto;padding:0 24px 48px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink-3)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+@media print{
+  body{background:#fff;font-size:10.5pt}
+  .top,.side,.reveal,.foot,.zhbtn{display:none!important}
+  .wrap{display:block;max-width:none;padding:0}
+  .q .body{display:block!important}
+  .zhbox{display:block!important}
+  .q{break-inside:avoid;border-color:#999;margin-bottom:9pt}
+  .passage{break-inside:avoid}
+  .hl{background-size:100% 100%!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <p class="eyebrow" id="brand"></p>
+    <h1 class="title" id="examTitle"></h1>
+    <p class="meta" id="examMeta"></p>
+    <nav class="bar" id="nav"></nav>
+  </div>
+</header>
+
+<div class="wrap"><main id="main"></main><aside class="side" id="side"></aside></div>
+<p class="foot" id="foot"></p>
+
+<script>
+/* ==========================================================================
+   ①  題目與詳解全部寫在下面的 EXAM 物件裡。要改題、加題、修字，只動這裡。
+
+   section（大題）：{ id, label, score, instruction, bank?, groups: [...] }
+   group（同一篇文章的題組）：{ passage?, zh?, questions: [...] }
+       passage 裡寫 __7__ 就會變成可點的空格，數字對應題號。
+       zh 是全文中譯，會做成可展開的按鈕。
+
+   question 依題型三選一：
+     選擇題   { n, kind, stem, options:{A..D}, answer:"B", translation, explain:{A..D}, evidence?, notes? }
+     單一填答 { n, kind, stem, answerText:"prejudice", why, notes? }
+     多格填答 { n, kind, prompt, stem, answers:[{k:"①", w:"字", note:"說明"}], notes? }
+   ========================================================================== */
+const EXAM = {
+  brand: "學測複習小考",
+  title: "學測複習小考 詳解｜112學測",
+  meta: "Instructor: Howard Chang　·　範圍：112學測",
+  footer: "KGHS 115-1 學測複習",
+  sections: [
+  {
+    id:"mc", label:"一、文意選擇", score:"40% · 每題 4%",
+    instruction:"每題後方括號為該題在 112 學測的出處。本大題的選項幾乎全部取自 112 學測的選項欄或文章內文，各選項後方的〔〕標示其確切位置。答案：D A C A A　D C A A B",
+    groups:[{
+      questions:[
+        { n:1, kind:"名詞 (112:4)",
+          stem:"Upon the super typhoon warning, Nancy rushed to the supermarket—only to find the shelves almost bare and the ______ nearly gone.",
+          options:{A:"fraction 一小部分；分數",B:"privilege 特權、殊榮",C:"commerce 商業、貿易",D:"stock 庫存、存貨"}, answer:"D",
+          translation:"超級強颱警報一發布，南西就衝到超市，結果只發現貨架幾乎空了，存貨也快要見底。",
+          explain:{
+            A:"fraction 意為「一小部分」，須以 a fraction of 的形式出現（a fraction of the cost），不能單獨當主詞並被 nearly gone 形容。〔112 詞彙題 6 (B)〕",
+            B:"privilege 意為「特權、殊榮」，是抽象的權利，不會在超市裡「快要沒了」。〔112 詞彙題 6 (C)〕",
+            C:"commerce 意為「商業、貿易」，是不可數的抽象概念，指整體的商業活動，不是貨架上賣的東西。〔112 閱讀測驗 43-46 尚吉巴原文：commerce in Zanzibar quickly boomed〕",
+            D:"兩個線索：the shelves almost bare（貨架幾乎空了）與 nearly gone（快要沒了），描述的都是商品被掃光的狀態。stock 意為「庫存、存貨」，與貨架空了互為表裡。〔112 詞彙題 4 題幹原文：the shelves almost bare and the stock nearly gone〕"
+          },
+          notes:[
+            {term:"stock", pos:"n.", gloss:"庫存、存貨（in stock 有庫存／out of stock 缺貨）；另有「股票」與「高湯」之意", ex:"The item is temporarily out of stock.", exZh:"這項商品暫時缺貨。"},
+            {term:"換一個空格就換一種考法", pos:"對照", gloss:"112 詞彙 4 原題挖的是 bare（答案），把 stock 留在題幹裡；本題反過來挖 stock，bare 變成線索。同一句話可以考兩次。"}
+          ]},
+
+        { n:2, kind:"名詞 (112:5)",
+          stem:"The accused escaped ______ by proving that he was somewhere else when the crime was committed.",
+          options:{A:"liability 法律責任、賠償責任",B:"generosity 慷慨、寬宏大量",C:"integrity 正直、誠信",D:"sincerity 誠意、真誠"}, answer:"A",
+          translation:"這名被告證明了案發當時他身在別處，因而免除了法律責任。",
+          explain:{
+            A:"escape liability 是法律語境的固定搭配，意為「免除（法律）責任」。三個線索都指向法庭：The accused（被告）、the crime was committed（罪行發生時）、以及 proving that he was somewhere else（證明不在場，也就是不在場證明）。〔112 詞彙題 5 (A)〕",
+            B:"generosity 意為「慷慨」，是正面的人格特質，不是可以被「逃脫」的東西。〔112 詞彙題 5 (B)〕",
+            C:"integrity 意為「正直、誠信」，同樣是值得追求的美德，escape integrity 語意不通。〔112 詞彙題 5 (C)〕",
+            D:"sincerity 意為「誠意」，是 112 學測該題的正解（I did not feel any sincerity in his apology），但在本句裡沒有人需要逃離誠意。〔112 詞彙題 5 (D)，該題答案〕"
+          },
+          notes:[
+            {term:"liability", pos:"n.", gloss:"法律責任、賠償責任（escape／avoid liability）；也指「負債」或「累贅」。adj. liable 應負責的", ex:"The company denied any liability for the accident.", exZh:"該公司否認對這起事故負有任何責任。"},
+            {term:"112 詞彙 5 的四個 -ity", pos:"對照", gloss:"liability／generosity／integrity／sincerity 四個字在原題同組出現，本題用了一模一樣的選項，但換了情境、換了答案。"}
+          ]},
+
+        { n:3, kind:"名詞片語 (112:11-15)",
+          stem:"In forested areas with thick tree crowns, there is ______ for resources such as space and light. Gaps in the treetops resulting from crown shyness may allow trees to increase their exposure to light and enhance photosynthesis.",
+          options:{A:"political ideology 政治意識形態",B:"burning sensation 灼熱感",C:"intense struggle 激烈的競逐",D:"growing reliance 日益增加的依賴"}, answer:"C",
+          translation:"在樹冠茂密的林區，為了空間與光線這類資源存在著激烈的競逐。樹冠羞避所造成的樹頂空隙，可能讓樹木增加受光量並促進光合作用。",
+          explain:{
+            A:"political ideology 意為「政治意識形態」，屬人類社會的政治議題，與森林裡樹木爭光毫無關聯。〔112 詞彙題 10 題幹：deeply influenced by political ideology〕",
+            B:"burning sensation 意為「灼熱感」，是身體的生理感受，樹木不會有感覺，而且 for resources 的介系詞也接不上。〔sensation 出自 112 篇章結構 聯覺原文：a real sensation of taste on their tongue〕",
+            C:"兩個線索：介系詞 for（struggle for sth 爭奪某物）與 thick tree crowns（茂密的樹冠），樹冠太密代表空間與光線不足，必然互相競爭。intense struggle 意為「激烈的競逐」。〔112 綜合測驗 11-15 原文：there is intense struggle for these resources〕",
+            D:"growing reliance 意為「日益增加的依賴」，搭配的介系詞是 on（reliance on sth）而非 for；而且樹木是在爭奪資源，不是依賴彼此。〔reliance 出自 112 綜合測驗 14 (A) reliance on；growing 出自 112 閱讀測驗 39-42：growing numbers of tea farms〕"
+          },
+          notes:[
+            {term:"struggle for", pos:"n. / v.", gloss:"為…而奮鬥、爭奪（a struggle for power／survival）。注意介系詞是 for。", ex:"There is an intense struggle for limited funding.", exZh:"大家為有限的經費激烈競逐。"},
+            {term:"介系詞先篩一輪", pos:"技巧", gloss:"空格後是 for，先看哪個選項能接 for。reliance 接 on、sensation 接 of／in，一下就刪掉兩個。"}
+          ]},
+
+        { n:4, kind:"片語動詞 (112:21-30)",
+          stem:"Water ______ more than half of our body weight. To sustain this amount of fluid in our bodies, plain water is considered our best choice, for it contains no sugar and no calories.",
+          options:{A:"makes up 構成、佔",B:"reaches for 伸手去拿",C:"takes in 攝取、吸收",D:"pulls down 把…往下拉"}, answer:"A",
+          translation:"水構成我們體重的一半以上。為了維持體內這樣的水分含量，白開水被認為是最好的選擇，因為它不含糖也不含熱量。",
+          explain:{
+            A:"make up 意為「構成、佔（比例）」。線索是受詞 more than half of our body weight（體重的一半以上）這個比例表達，而主詞 Water 是構成體重的成分之一。〔112 文意選填 喝水篇首句原文：Water makes up more than half of our body weight；另見 112 綜合測驗 13 (D) make up for〕",
+            B:"reach for 意為「伸手去拿」，主詞必須是能伸手的人；水不會伸手拿體重。〔112 文意選填 (J) reach for，該篇第 21 題答案：the healthiest drink we can reach for〕",
+            C:"take in 意為「攝取、吸收」，主詞是攝取的一方（人喝水）；但本句主詞是 Water，方向顛倒了。這是本題最需要分辨的選項。〔112 文意選填 喝水篇原文：it might be well past the best moment to take in fluid〕",
+            D:"pull down 意為「把…往下拉」，是具體的拉扯動作，接不上 more than half of our body weight 這個比例。〔112 綜合測驗 16-20 原文：they are pulled down by Earth's gravity〕"
+          },
+          notes:[
+            {term:"make up", pos:"phr. v.", gloss:"構成、佔（make up 60% of the total）；另有「編造」「和好」「化妝」之意，一詞多義", ex:"Women make up nearly half the workforce.", exZh:"女性佔勞動人口近半。"},
+            {term:"主詞決定方向", pos:"技巧", gloss:"Water 是被包含的成分，所以動詞必須是「構成」而非「攝取」。先確認主詞是動作的發出者還是承受者。"}
+          ]},
+
+        { n:5, kind:"複合形容詞 (112:21-30)",
+          stem:"Obviously, a physically active person with an outdoor job under the sun will need to drink more fluid than a desk-______ person who lives and works in an air-conditioned place.",
+          options:{A:"bound 受束縛的（desk-bound 整天坐辦公桌的）",B:"centered 以…為中心的",C:"oriented 以…為導向的",D:"related 與…相關的"}, answer:"A",
+          translation:"顯然，一個在陽光下從事戶外工作、身體活動量大的人，會比一個在冷氣房裡生活與工作、整天坐辦公桌的人需要喝更多水。",
+          explain:{
+            A:"desk-bound 是固定的複合形容詞，意為「整天被綁在辦公桌前的」，bound 取其「受束縛」之意。線索是 than 的比較結構：前者是 a physically active person with an outdoor job（戶外工作、活動量大），後者必須是相反的「久坐室內」，而 lives and works in an air-conditioned place（在冷氣房生活工作）正好印證。〔112 文意選填 喝水篇原文：a desk-bound person who lives and works in an air-conditioned place〕",
+            B:"centered 須搭配特定名詞構成慣用語（child-centered 以兒童為中心的、self-centered 自我中心的），desk-centered 不是英文的固定說法。",
+            C:"oriented 意為「以…為導向的」（export-oriented 外銷導向、goal-oriented 目標導向），修飾的是方針或性格取向，不用來描述人的身體被固定在某處。",
+            D:"related 意為「與…相關的」（work-related 與工作有關的），desk-related 會變成「與桌子有關的」，無法形容一個人的生活型態。"
+          },
+          notes:[
+            {term:"desk-bound", pos:"adj.", gloss:"整天坐辦公桌的、內勤的。bound 在複合字中表「受限於…的」：housebound 足不出戶的／snowbound 被雪困住的", ex:"After years of desk-bound work, he took up hiking.", exZh:"做了多年內勤工作後，他開始爬山。"},
+            {term:"複合形容詞的字尾各有搭配", pos:"整理", gloss:"-bound 受限於／-centered 以…為中心／-oriented 以…為導向／-related 與…有關。四個字尾不能互換，要記固定搭配。"}
+          ]},
+
+        { n:6, kind:"關係詞 (112:31-34)",
+          stem:"Synesthesia is a condition ______ people's senses intermix. In some cases, people with synesthesia may experience colors when they hear, read, or even think of letters and numbers.",
+          options:{A:"why 為何（關係副詞）",B:"what 什麼（複合關係代名詞）",C:"to which 到…之中",D:"in which 在其中"}, answer:"D",
+          translation:"聯覺是一種感官會互相交混的狀態。在某些情況下，有聯覺的人在聽到、讀到、甚至只是想到字母與數字時，就可能體驗到顏色。",
+          explain:{
+            A:"why 當關係副詞時，先行詞必須是表「原因」的字（the reason why）；但先行詞 a condition 是一種狀態，不是原因。",
+            B:"what 是複合關係代名詞，本身already包含先行詞（＝the thing which），所以前面不能再有先行詞 a condition，兩者會重複。",
+            C:"to which 的介系詞 to 表方向或對象，但 intermix（互相交混）這個動作是發生「在這個狀態之中」，而不是「朝這個狀態而去」，介系詞用錯了。這是本題最需要分辨的選項。",
+            D:"先行詞是 a condition（一種狀態），關係子句 people's senses intermix 結構完整（主詞 people's senses ＋ 不及物動詞 intermix），缺的是表「在此狀態中」的副詞性成分。condition 搭配的介系詞是 in（in this condition），所以用 in which。〔112 篇章結構 聯覺原文：Synesthesia is a condition in which people's senses intermix〕"
+          },
+          notes:[
+            {term:"介系詞＋關係代名詞", pos:"文法", gloss:"介系詞由先行詞與原句的搭配決定：in a condition → in which／on a day → on which／for a reason → for which。先還原成獨立句再看該用哪個介系詞。", ex:"This is the box in which I keep my letters.", exZh:"這就是我存放信件的盒子。"},
+            {term:"子句完整就不用關代", pos:"技巧", gloss:"people's senses intermix 不缺主詞也不缺受詞，所以不能只填 which 或 what，必須是「介系詞＋關代」或關係副詞。"}
+          ]},
+
+        { n:7, kind:"字義理解 (112:35-38)",
+          stem:"In the 14th century, hoops were popular as a form of recreation in Great Britain.\n\nWhich of the following is NOT considered to be recreation?",
+          options:{A:"Reading literature and mythology 閱讀文學與神話",B:"Watching a TV series 看電視劇",C:"Attending a corporate seminar 參加公司的研討會",D:"Taking part in athletic activities 參與體育活動"}, answer:"C",
+          translation:"在十四世紀，呼拉圈在英國是一種受歡迎的休閒娛樂形式。下列何者不被視為休閒娛樂？",
+          explain:{
+            A:"閱讀文學與神話是出於興趣的自主活動，屬於休閒閱讀，符合 recreation 的定義。",
+            B:"看電視劇是典型的消遣娛樂，是 recreation 最常見的例子之一。",
+            C:"recreation 的核心語意是「工作之餘為了放鬆而從事的消遣活動」。a corporate seminar（公司的研討會）屬於職務上的義務，是工作的一部分而非工作之餘的放鬆，因此不算 recreation。本題考的正是這個「自願休閒」對「工作義務」的分界。",
+            D:"參與體育活動是 recreation 的標準範例，英文甚至有 recreational sports（休閒運動）這個固定說法。"
+          },
+          notes:[
+            {term:"recreation", pos:"n.", gloss:"休閒娛樂、消遣（re- 再 ＋ creation 創造，原意是「恢復精神」）。adj. recreational 休閒的", ex:"The park provides space for rest and recreation.", exZh:"這座公園提供休息與休閒的空間。"},
+            {term:"recreation 的判斷標準", pos:"技巧", gloss:"問自己兩件事：① 是自願的嗎 ② 目的是放鬆嗎。兩者皆是才算 recreation。有義務性質的活動（上班、開會、受訓）都不算。"}
+          ]},
+
+        { n:8, kind:"動詞 (112:39-42)",
+          stem:"Furthermore, elephants are known to resist leaving their sick or dying behind, and a herd may ______ at a trench with a trapped baby for hours, reluctant to move on until all hope is lost.",
+          options:{A:"linger 徘徊不去、留連",B:"render 使成為；提供",C:"smother 使窒息、悶死",D:"accumulate 累積、堆積"}, answer:"A",
+          translation:"此外，眾所皆知大象不願拋下生病或垂死的同伴，象群可能會在困著小象的壕溝旁徘徊數小時，直到一切希望破滅才肯離開。",
+          explain:{
+            A:"兩個線索：for hours（數小時）與 reluctant to move on until all hope is lost（不願離開，直到希望破滅）——在原地遲遲不走，正是 linger。前半句 resist leaving their sick or dying behind（不願拋下傷病同伴）也說明了牠們徘徊的原因。〔112 閱讀測驗 39-42 原文：a herd may linger at a trench with a trapped baby for hours〕",
+            B:"render 意為「使成為」或「提供」，是及物動詞必須接受詞；但空格後是介系詞 at，結構不合。〔112 詞彙題 8 (C) rendered〕",
+            C:"smother 意為「使窒息、悶死」，是及物動詞，受詞是被悶住的對象；原文中被悶住的是陷在泥裡的母象與小象，不是象群在壕溝旁做的動作。這是同篇文章內的誘答，要讀清楚主詞是誰。〔112 閱讀測驗 39-42 原文：both may be trapped and smothered by thick mud〕",
+            D:"accumulate 意為「累積、堆積」，主詞多為水、財富或雜物；象群不會「堆積」在壕溝旁。〔112 閱讀測驗 39-42 原文：farmers must dig drainage trenches to prevent water from accumulating〕"
+          },
+          notes:[
+            {term:"linger", pos:"vi.", gloss:"徘徊不去、留連；也指氣味或感覺久久不散（The smell lingered.）", ex:"A few guests lingered after the party ended.", exZh:"派對結束後仍有幾位客人留連不走。"},
+            {term:"及物還是不及物", pos:"技巧", gloss:"空格後是介系詞 at，所以要填不及物動詞。render 與 smother 都是及物動詞，可以直接刪掉。"}
+          ]},
+
+        { n:9, kind:"名詞 (112:43-46)",
+          stem:"Hundreds of ships sailing the Spice Route docked here, bringing spices and goods for ______, and Zanzibar became one of the biggest trading centers in the world.",
+          options:{A:"transaction 交易",B:"translation 翻譯",C:"transportation 運輸",D:"transmission 傳輸、傳播"}, answer:"A",
+          translation:"數百艘航行香料之路的船隻在此停泊，帶來香料與貨物進行交易，尚吉巴因而成為世上最大的貿易中心之一。",
+          explain:{
+            A:"兩個線索：bringing spices and goods（帶來香料與貨物）與 Zanzibar became one of the biggest trading centers（成為最大的貿易中心之一）——船把貨帶來此地的目的是買賣，正是 transaction（交易）。〔112 閱讀測驗 43-46 原文：bringing spices and goods for transaction〕",
+            B:"translation 意為「翻譯」，是語言的轉換，與貨物買賣無關。",
+            C:"transportation 意為「運輸」，但運輸已經由 ships sailing ... docked here（船航行並停泊）完成了；船把貨帶來之後要做的是交易，不是再運輸一次。這是本題最需要分辨的選項。",
+            D:"transmission 意為「傳輸、傳播」，受詞多為訊號、電力或疾病，不用於實體貨物的買賣。〔112 綜合測驗 11-15 原文：the transmission of diseases from tree to tree〕"
+          },
+          notes:[
+            {term:"transaction", pos:"n.", gloss:"交易（a business／cash transaction）。v. transact", ex:"All transactions are recorded automatically.", exZh:"所有交易都會自動記錄。"},
+            {term:"trans- 家族辨析", pos:"整理", gloss:"trans- 表「跨越、轉移」：transaction 交易／translation 翻譯（跨語言）／transportation 運輸（跨空間）／transmission 傳輸（跨媒介）。本題刻意用同字首設計，必須靠字根後半判斷。"}
+          ]},
+
+        { n:10, kind:"連接詞 (112:47-50)",
+          stem:"GreenBurgers are heavily processed with more calories and sodium than meat and are more expensive too! ______ you are a strict vegetarian and eschew meat for ethical reasons, meat is surely a better deal.",
+          options:{A:"Whereas 然而、相較之下",B:"Unless 除非",C:"Now that 既然",D:"Provided that 假如、只要"}, answer:"B",
+          translation:"植物肉漢堡經過高度加工，熱量與鈉含量都比真肉高，而且還更貴！除非你是嚴格的素食者、出於倫理因素而不吃肉，否則肉類肯定是比較划算的選擇。",
+          explain:{
+            A:"Whereas 意為「然而、相較之下」，用來並列兩個對比的事實（A is cheap, whereas B is expensive）；但本句的邏輯是「在某個條件不成立的情況下」，是條件關係而非單純對比。",
+            B:"Unless 意為「除非」，等於 if not。判斷依據是前後句的邏輯：前面列出植物肉的三個缺點（高度加工、熱量鈉含量高、更貴），結論是 meat is surely a better deal（肉比較划算），而這個結論只有在「你不是嚴格素食者」時才成立——素食者不吃肉，划不划算就不是考量了。〔112 混合題 (B) Smith 留言原文：Unless you are a strict vegetarian and eschew meat for ethical reasons, meat is surely a better deal〕",
+            C:"Now that 意為「既然」，引導的是已成立的既定事實；但你是不是嚴格素食者對說話者而言是未知的假設，不是既定前提。",
+            D:"Provided that 意為「假如、只要」，是正面條件（＝if）；若填入會變成「只要你是嚴格素食者，肉就比較划算」，與素食者不吃肉的事實完全矛盾。這是本題最需要分辨的選項：Unless 是否面條件，Provided that 是正面條件，意思正好相反。"
+          },
+          notes:[
+            {term:"unless", pos:"conj.", gloss:"除非（＝if not）。unless 子句用現在式表未來，不用 will。", ex:"We'll go unless it rains.", exZh:"除非下雨，我們就去。"},
+            {term:"條件連接詞的正負", pos:"整理", gloss:"正面條件：if／provided that／as long as（只要…就）。負面條件：unless／in case（除非／以免）。代回原句檢查邏輯是否說得通，最快分辨。"}
+          ]}
+      ]
+    }]
+  },
+
+  {
+    id:"vf", label:"二、動詞變化", score:"12% · 每題 4%",
+    instruction:"將括弧內的動詞做適當變化。答案：11. redistribute　12. tested　13. negotiating",
+    groups:[{
+      questions:[
+        { n:11, kind:"redistribute (112:16-20)", answerText:"redistribute（維持原形）",
+          stem:"However, with the absence of gravity in the outer space, our body fluids ______ (redistribute), shifting toward the upper body and the head.",
+          translation:"然而，在外太空沒有重力的情況下，我們的體液會重新分布，往上半身與頭部移動。",
+          why:"兩個判斷步驟。第一，時態：本句描述的是一個恆常為真的生理現象，用現在簡單式；主詞 our body fluids 是複數，所以動詞維持原形 redistribute，不加 s。第二，主動還是被動：體液是自己流動、自行重新分布的，不是被誰重新分配，所以用主動而非 are redistributed。句尾的分詞構句 shifting toward the upper body（往上半身移動）也印證主詞是動作的發出者。這正是 112 學測第 18 題的考點，原題四個選項是 redistribute／redistributed／redistributing／being redistributed，答案為 (A) 原形。",
+          notes:[
+            {term:"redistribute", pos:"vi. / vt.", gloss:"重新分布、重新分配（re- 再 ＋ distribute 分配）。n. redistribution", ex:"Body fluids redistribute in zero gravity.", exZh:"在零重力下體液會重新分布。"},
+            {term:"主動或被動的判斷法", pos:"技巧", gloss:"問「主詞是自己做，還是被別人做」。體液自己移動＝主動；若句意是「體液被醫生重新分配」才用被動。分詞構句 shifting 是主動形式，也是一道線索。"}
+          ]},
+
+        { n:12, kind:"test (112:31-34)", answerText:"tested（過去分詞）",
+          stem:"When asked what color is evoked by a letter or number, synesthetic people would persistently give the same answer even if ______ (test) months or years apart.",
+          translation:"當被問到某個字母或數字會喚起什麼顏色時，有聯覺的人會始終給出同樣的答案，即使相隔數月或數年再測試也一樣。",
+          why:"even if 引導的副詞子句，主詞與主要子句相同（synesthetic people），因此省略了主詞與 be 動詞，完整寫法是 even if they are tested months or years apart。省略之後只剩下過去分詞 tested。判斷依據有兩點：一是這些人是「被測試」的對象，必須用被動；二是句首的 When asked 用了完全相同的省略結構（＝When they are asked），前後呼應。",
+          notes:[
+            {term:"副詞子句的省略", pos:"文法", gloss:"當副詞子句主詞與主句相同且含 be 動詞時，可省略「主詞＋be」。主動留現在分詞，被動留過去分詞。", ex:"While (he was) waiting, he read a book.", exZh:"等待的時候，他讀了一本書。"},
+            {term:"同句找線索", pos:"技巧", gloss:"句首的 When asked 已經是同樣的省略結構，照著做就對了。這種「一句之內前後對稱」是常見的出題手法。"}
+          ]},
+
+        { n:13, kind:"negotiate (112:39-42)", answerText:"negotiating（動名詞）",
+          stem:"But baby elephants, not used to ______ (negotiate) rough ground, may easily fall into the trenches and get hurt; and once injured, they might not be able to climb out.",
+          translation:"但小象不習慣通行於崎嶇的地面，很容易掉進壕溝受傷；而一旦受傷，牠們可能就爬不出來了。",
+          why:"be used to sth 意為「習慣於某事」，其中 to 是介系詞，後面必須接名詞或動名詞，所以用 negotiating。這裡要特別和 used to V（過去曾經）區分：若寫成 not used to negotiate 會變成「過去不曾通行」，語意就錯了。另外 negotiate 在此不是「談判」，而是「順利通過（崎嶇地形、彎道）」這個較少見的字義，正是 112 學測這篇文章值得學的一個字。",
+          notes:[
+            {term:"be used to + V-ing", pos:"句型", gloss:"習慣於做某事（to 是介系詞）。對照：used to + V 過去曾經／be used to + V 被用來做某事。三者差一點意思全變。", ex:"She is not used to driving on the left.", exZh:"她不習慣靠左行駛。"},
+            {term:"negotiate", pos:"vt.", gloss:"① 談判、協商 ② 順利通過、克服（negotiate a sharp bend 過急彎／negotiate rough ground 走過崎嶇地面）。第二個字義是學測的加分字。"}
+          ]}
+      ]
+    }]
+  },
+
+  {
+    id:"gl", label:"三、字詞中譯", score:"36% · 每項 4%",
+    instruction:"寫出畫線字詞的中文意思。題號旁標示的是該畫線字詞，括號為 112 學測出處。第 21 題有兩個畫線詞，各計一項。",
+    groups:[{
+      questions:[
+        { n:14, kind:"crippled (112:8)", answerText:"使…殘廢、嚴重破壞（使一蹶不振）",
+          stem:"Corrupt officials and misguided policies have crippled the country's economy and burdened its people with enormous foreign debts.",
+          translation:"貪腐的官員與錯誤的政策重創了這個國家的經濟，並讓人民背負巨額外債。",
+          why:"cripple 原意是「使人殘廢、使跛腳」，當受詞是經濟、產業或系統這類抽象結構時，引申為「嚴重破壞、使癱瘓而運作不了」。本句受詞是 the country's economy，所以取引申義。判斷線索是並列的後半句 burdened its people with enormous foreign debts（讓人民背負巨額外債），同為嚴重的負面後果。這是 112 學測詞彙題第 8 題的答案字。",
+          notes:[
+            {term:"cripple", pos:"vt.", gloss:"使殘廢；（引申）重創、使癱瘓（cripple the economy／the industry）。adj. crippling 造成嚴重損害的", ex:"The strike crippled public transport for a week.", exZh:"這場罷工使公共運輸癱瘓了一週。"},
+            {term:"corrupt", pos:"adj.", gloss:"貪腐的（n. corruption）；同句的 misguided 則是「誤導的、判斷錯誤的」。"}
+          ]},
+
+        { n:15, kind:"choked with (112:9)", answerText:"被…塞滿、被…阻塞（擠得動彈不得）",
+          stem:"As a record number of fans showed up for the baseball final, the highways around the stadium were choked with traffic all day.",
+          translation:"由於破紀錄的球迷人數出現在這場棒球決賽，體育場周邊的高速公路整天都被車流塞得動彈不得。",
+          why:"choke 原意是「使窒息、噎住」，be choked with sth 則引申為「被某物塞滿到無法通行」。這個比喻把道路想成氣管，車流多到讓它「呼吸不過來」。線索是 a record number of fans（破紀錄的球迷人數）與 all day（整天），都指向嚴重的交通堵塞。這是 112 學測詞彙題第 9 題的答案字。",
+          notes:[
+            {term:"be choked with", pos:"phr.", gloss:"被…塞滿、堵塞（roads choked with traffic／a river choked with weeds）", ex:"The narrow lanes were choked with tourists.", exZh:"狹窄的巷弄被遊客塞得水洩不通。"},
+            {term:"choke 的其他用法", pos:"補充", gloss:"choke on sth 被某物噎到／choke back tears 強忍淚水／（口語）choke 在關鍵時刻失常。"}
+          ]},
+
+        { n:16, kind:"consensus (112:11-15)", answerText:"共識（一致的看法）",
+          stem:"Despite decades of investigation, there is no consensus on exactly what causes the beautiful and mysterious phenomenon of crown shyness.",
+          translation:"儘管歷經數十年的研究，對於究竟是什麼造成樹冠羞避這個美麗而神秘的現象，目前仍沒有共識。",
+          why:"consensus 意為「共識」，指一群人（此處是科學家）對某議題達成的一致看法。固定搭配是 reach／arrive at a consensus on sth（對…達成共識）。線索是 Despite decades of investigation（儘管研究了數十年）這個讓步語氣，以及 exactly what causes（究竟是什麼造成），都說明答案至今未定、眾說紛紜。",
+          notes:[
+            {term:"consensus", pos:"n.", gloss:"共識（reach／arrive at a consensus on sth）。常見搭配：a broad consensus 廣泛共識／no consensus 沒有共識", ex:"Scientists have reached no consensus on the cause.", exZh:"科學家對成因尚未達成共識。"},
+            {term:"crown shyness", pos:"n.", gloss:"樹冠羞避：相鄰樹木的樹冠彼此不接觸、留下縫隙的現象。112 學測綜合測驗的主題。"}
+          ]},
+
+        { n:17, kind:"accompanied by (112:16-20)", answerText:"伴隨著（同時出現）",
+          stem:"The “Charlie Brown effect” is often accompanied by space motion sickness, headaches, and nausea.",
+          translation:"「查理布朗效應」常伴隨著太空動暈症、頭痛與噁心一起出現。",
+          why:"accompany 意為「陪伴、伴隨」，是及物動詞；被動語態 A is accompanied by B 意為「A 伴隨著 B（同時出現）」。注意介系詞必須是 by 而非 with。線索是 often（常常）與後面並列的三項症狀，說明這些症狀與該效應同時發生。這是 112 學測綜合測驗第 20 題的答案。",
+          notes:[
+            {term:"be accompanied by", pos:"phr.", gloss:"伴隨著…（A accompanies B ＝ B is accompanied by A）。介系詞是 by，不是 with。", ex:"The fever was accompanied by a severe cough.", exZh:"發燒同時伴隨著嚴重的咳嗽。"},
+            {term:"Charlie Brown effect", pos:"n.", gloss:"查理布朗效應：太空人在無重力環境下體液上移、臉部浮腫，狀似漫畫人物查理布朗的圓臉。"}
+          ]},
+
+        { n:18, kind:"even things out (112:21-30)", answerText:"使（情況）均衡、把差距拉平",
+          stem:"Replacing lost fluid with just plain water means the body has too much water and not enough salt. To even things out, the body will get rid of water by producing urine.",
+          translation:"只用白開水補充流失的水分，會讓身體水分過多而鹽分不足。為了把這個失衡拉平，身體會透過製造尿液來排掉水分。",
+          why:"even 在此是動詞，意為「使平均、使均等」，even things out 即「把事情擺平、使恢復平衡」。線索在前一句：too much water and not enough salt（水太多、鹽不夠）是一個失衡狀態，而身體排尿正是為了修正它。這是 112 學測文意選填第 23 題的答案 (G) even。",
+          notes:[
+            {term:"even out", pos:"phr. v.", gloss:"使均衡、拉平差距；也可當不及物（Prices should even out soon. 價格應該很快會趨於平穩）", ex:"The payments are spread over a year to even things out.", exZh:"款項分攤一年支付，以平均負擔。"},
+            {term:"even 的詞性變化", pos:"整理", gloss:"adv. 甚至／adj. 平坦的、偶數的、平手的／v. 使平均。112 學測考的是最少見的動詞用法。"}
+          ]},
+
+        { n:19, kind:"featured prominently (112:35-38)", answerText:"佔有重要地位、扮演顯著的角色",
+          stem:"Often considered as representing the circle of life, hoops featured prominently in the ritual dances of Native Americans.",
+          translation:"圈常被視為代表生命的循環，在美洲原住民的儀式舞蹈中佔有重要地位。",
+          why:"feature 當不及物動詞時意為「佔有顯著地位、扮演重要角色」，加上副詞 prominently（顯著地）語氣更強。線索是句首的分詞構句 Often considered as representing the circle of life（常被視為代表生命的循環），說明圈在該文化中具有重大象徵意義，自然在儀式中地位重要。",
+          notes:[
+            {term:"feature", pos:"vi. / vt.", gloss:"vi. 佔重要地位（feature prominently／heavily in sth）；vt. 以…為特色、由…主演（The film features a famous actor.）", ex:"Rice features prominently in Asian diets.", exZh:"米飯在亞洲飲食中佔重要地位。"},
+            {term:"prominently", pos:"adv.", gloss:"顯著地、突出地（adj. prominent 顯著的、傑出的；n. prominence）"}
+          ]},
+
+        { n:20, kind:"takes the initiative (112:39-42)", answerText:"採取主動、率先行動",
+          stem:"Elephant Friendly Tea is an organization that takes the initiative to make it possible.",
+          translation:"「大象友善茶」是一個率先採取行動、讓這件事成為可能的組織。",
+          why:"take the initiative to V 是固定片語，意為「主動率先去做某事」，initiative 在此意為「主動、首創精神」，前面必須加定冠詞 the。線索是後面的不定詞 to make it possible（讓它成為可能），說明這個組織是第一個站出來行動的人，而非被動等待。",
+          notes:[
+            {term:"take the initiative (to V)", pos:"phr.", gloss:"採取主動、率先行動。注意要加 the。adj. 形式：on one's own initiative 自發地", ex:"She took the initiative to organize the cleanup.", exZh:"她主動發起了這次清掃行動。"},
+            {term:"initiative 的兩個意思", pos:"整理", gloss:"① 主動、首創精神（take the initiative）② 新倡議、新方案（a government initiative 政府的新措施）。"}
+          ]},
+
+        { n:21, kind:"At the close of / gave rise to (112:43-46)",
+          stem:"At the close of the 15th century, Europeans' craze for spices gave rise to the Spice Route, a network of sea lanes joining Europe with the Far East, where most spices came from.",
+          answers:[
+            {k:"At the close of", w:"接近…的尾聲、在…末期", note:"close 在此是名詞「結束、尾聲」，at the close of the 15th century 即「十五世紀末」。同義說法：at the end of／late in the 15th century。注意 close 當名詞時讀 /kloʊs/，與動詞 /kloʊz/ 不同。"},
+            {k:"gave rise to", w:"造成、引發、促成", note:"give rise to sth 意為「引發、導致」，受詞多為後續的現象或結果。本句中歐洲人對香料的狂熱「促成」了香料之路的形成。同義：lead to／bring about／result in。"}
+          ],
+          translation:"十五世紀末，歐洲人對香料的狂熱促成了香料之路的誕生，那是一個連接歐洲與遠東（多數香料的產地）的海上航線網。",
+          why:"本題有兩個畫線詞。At the close of 的關鍵是認出 close 是名詞「尾聲」而非形容詞「接近的」；gave rise to 則要注意它的主詞是「原因」、受詞是「結果」，方向不可顛倒——是狂熱造成了香料之路，不是香料之路造成狂熱。",
+          notes:[
+            {term:"at the close of", pos:"phr.", gloss:"在…的尾聲、…末期（＝at the end of）。close 作名詞：bring sth to a close 使…結束", ex:"At the close of the meeting, he thanked everyone.", exZh:"會議結束時，他向所有人致謝。"},
+            {term:"give rise to", pos:"phr.", gloss:"引發、促成（主詞是原因，受詞是結果）。同義：lead to／bring about／result in／contribute to。", ex:"The decision gave rise to fierce debate.", exZh:"這個決定引發了激烈的辯論。"}
+          ]}
+      ]
+    }]
+  },
+
+  {
+    id:"tr", label:"四、翻譯填空", score:"12% · 每格 4%",
+    instruction:"兩題皆出自 112 學測中譯英。答案：22. disasters　23. conflicts; ensuring",
+    groups:[{
+      questions:[
+        { n:22, kind:"112 學測 中譯英 1", answerText:"disasters",
+          stem:"歷史一再證明，戰爭會造成極為可怕的災難。\n\nHistory has proven again and again that wars can lead to extremely terrible ______.",
+          translation:"歷史一再證明，戰爭會造成極為可怕的災難。",
+          why:"「災難」是 disaster。此處必須用複數 disasters，因為中文的「災難」泛指各種災禍、不是特定一樁，而 disaster 是可數名詞，泛指時用複數。另外 lead to 的 to 是介系詞，後面接名詞，不要誤寫成不定詞。",
+          notes:[
+            {term:"disaster", pos:"n.", gloss:"災難、大禍（a natural disaster 天災／a disaster area 災區）。adj. disastrous 災難性的", ex:"War always brings disasters to civilians.", exZh:"戰爭總是給平民帶來災難。"},
+            {term:"泛指用複數", pos:"技巧", gloss:"可數名詞泛指一類事物時用複數且不加冠詞：wars cause disasters。這是中譯英最常見的扣分點之一。"}
+          ]},
+
+        { n:23, kind:"112 學測 中譯英 2",
+          stem:"避免衝突、確保世界和平應該是所有人類追求的目標。\n\nAvoiding ______ and ______ world peace should be the goal that all human beings pursue.",
+          answers:[
+            {k:"⑴", w:"conflicts", note:"「衝突」。conflict 泛指各種衝突時用複數 conflicts；若視為不可數的抽象概念，填 conflict 亦可接受。"},
+            {k:"⑵", w:"ensuring", note:"「確保」。與前面的 Avoiding 由 and 並列，詞性必須一致，所以同樣用動名詞 ensuring。填 securing 亦可。"}
+          ],
+          translation:"避免衝突、確保世界和平應該是所有人類追求的目標。",
+          why:"本題的核心是 and 前後的對等：Avoiding ... and ensuring ... 兩個動名詞片語並列當主詞，詞性必須一致，所以第二格不能寫成 ensure 或 to ensure。另外 world peace 是固定搭配、不可數，前面不加冠詞；而兩個動名詞片語視為一個整體概念，所以動詞用單數 should be。",
+          notes:[
+            {term:"ensure", pos:"vt.", gloss:"確保、保證（ensure that 子句／ensure sth）。區分：ensure 確保／insure 投保／assure 向某人保證", ex:"These steps ensure everyone's safety.", exZh:"這些措施確保了每個人的安全。"},
+            {term:"and 前後要對等", pos:"文法", gloss:"並列連接詞連接的成分詞性必須一致：Avoiding（動名詞）和 ensuring（動名詞）。這是中譯英與文法題的高頻考點。"}
+          ]}
+      ]
+    }]
+  }
+  ]
+};
+
+/* ==========================================================================
+   ②  以下為程式碼，一般情況不需要修改。
+   ========================================================================== */
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const wordOf = q => q.options ? q.options[q.answer] : (q.answerText || '');
+const allQ = [];
+EXAM.sections.forEach(s => s.groups.forEach(g => g.questions.forEach(q => allQ.push(q))));
+const findQ = n => allQ.find(q => String(q.n) === String(n));
+
+document.getElementById('brand').textContent = EXAM.brand;
+document.getElementById('examTitle').textContent = EXAM.title;
+document.getElementById('examMeta').textContent = EXAM.meta;
+
+let noteCount = 0;
+allQ.forEach(q => noteCount += (q.notes || []).length);
+
+const nav = document.getElementById('nav');
+EXAM.sections.forEach(s => {
+  const a = document.createElement('a');
+  a.className = 'chip'; a.href = '#sec-' + s.id; a.textContent = s.label.replace(/^[一二三四五六]、/, m => m);
+  nav.appendChild(a);
+});
+const noteChip = document.createElement('a');
+noteChip.className = 'chip'; noteChip.href = '#side'; noteChip.textContent = '重點表 ' + noteCount;
+nav.appendChild(noteChip);
+const toggleAll = document.createElement('button');
+toggleAll.className = 'chip solid'; toggleAll.textContent = '全部展開';
+nav.appendChild(toggleAll);
+
+function renderPassage(g, i, sid) {
+  let html = esc(g.passage);
+  g.questions.forEach(q => {
+    if (!q.evidence) return;
+    const t = esc(q.evidence);
+    if (html.includes(t)) html = html.replace(t, `<span class="hl ev" data-ev="${q.n}">${t}</span>`);
+  });
+  html = html.replace(/__(\d+)__/g, (m, n) =>
+    `<button class="blank" data-blank="${n}" aria-label="第 ${n} 題空格">${n}</button>`);
+  const body = '<div class="passage">' +
+    html.split(/\n{2,}/).map(p => '<p>' + p.replace(/\n/g, ' ') + '</p>').join('') + '</div>';
+  if (!g.zh) return body;
+  const id = sid + '-' + i;
+  return body +
+    `<button class="zhbtn" data-zh="${id}">全文中譯</button>` +
+    `<div class="zhbox" id="zh-${id}">` +
+      g.zh.split(/\n{2,}/).map(p => '<p>' + esc(p).replace(/\n/g, ' ') + '</p>').join('') +
+    '</div>';
+}
+
+function renderQ(q) {
+  const parts = [];
+  if (q.options) {
+    const ks = Object.keys(q.options);
+    parts.push('<div class="opts">' + ks.map(k =>
+      `<div class="opt"><span class="opt-k">(${k})</span><span>${esc(q.options[k])}</span></div>`).join('') + '</div>');
+  }
+  const head = `<div class="q-tag"><span class="q-n">${String(q.n).padStart(2,'0')}</span><span class="q-kind">${esc(q.kind || '')}</span></div>` +
+    (q.prompt ? `<p class="prompt">${esc(q.prompt)}</p>` : '') +
+    (q.stem ? `<p class="stem">${esc(q.stem).replace(/\n/g,'<br>')}</p>` : '');
+
+  let ans = '';
+  if (q.answers) {
+    ans = '<ul class="fills">' + q.answers.map(a =>
+      `<li class="fill"><span class="fill-k">${esc(a.k)}</span><span class="fill-w hl" data-ansmulti>${esc(a.w)}</span><span class="fill-n">${esc(a.note || '')}</span></li>`).join('') + '</ul>';
+  } else {
+    const label = q.options ? `(${q.answer}) ${esc(wordOf(q))}` :
+      (q.answer ? `(${q.answer}) ${esc(q.answerText)}` : esc(q.answerText));
+    ans = `<p class="ans"><span class="ans-k">答案</span><span class="ans-v hl" data-ans="${q.n}">${label}</span></p>`;
+  }
+
+  let expl = '';
+  if (q.explain) {
+    expl = '<ul class="lines">' + Object.keys(q.options).map(k => {
+      const right = q.multi ? q.multi.includes(k) : k === q.answer;
+      return `<li class="line ${right ? 'right' : 'wrong'}"><span class="line-k">(${k})</span><span>${esc(q.explain[k] || '')}</span></li>`;
+    }).join('') + '</ul>';
+  }
+  const why = q.why ? `<p class="why">${esc(q.why)}</p>` : '';
+  const sample = q.sample ? `<div class="sample"><p class="note-h">參考範文</p>` +
+    q.sample.split(/\n{2,}/).map(p => `<p>${esc(p).replace(/\n/g,' ')}</p>`).join('') + '</div>' : '';
+  const evid = q.evidence ? `<p class="evid"><span>文中依據</span>${esc(q.evidence)}</p>` : '';
+  const notes = (q.notes || []).length ? `<div class="note"><p class="note-h">重點整理</p>` +
+    q.notes.map(nt => `<p class="note-i"><span class="term">${esc(nt.term)}</span><span class="pos">${esc(nt.pos || '')}</span><span class="gloss">${esc(nt.gloss || '')}</span>` +
+      (nt.ex ? `<span class="ex">${esc(nt.ex)}<i>${esc(nt.exZh || '')}</i></span>` : '') + '</p>').join('') + '</div>' : '';
+
+  return `<article class="q" id="q-${q.n}" data-n="${q.n}">
+    <div class="q-top">${head}${parts.join('')}
+      <button class="reveal" aria-expanded="false" aria-controls="body-${q.n}">看詳解</button>
+    </div>
+    <div class="body" id="body-${q.n}">
+      ${ans}${q.translation ? `<p class="zh">${esc(q.translation)}</p>` : ''}${expl}${why}${evid}${sample}${notes}
+    </div>
+  </article>`;
+}
+
+document.getElementById('main').innerHTML = EXAM.sections.map((s, i) => `
+  <section class="sec" id="sec-${s.id}">
+    <div class="sec-head">
+      <span class="sec-num">${String(i+1).padStart(2,'0')}</span>
+      <h2 class="sec-label">${esc(s.label)}</h2>
+      <span class="sec-score">${esc(s.score || '')}</span>
+    </div>
+    ${s.instruction ? `<p class="sec-inst">${esc(s.instruction)}</p>` : ''}
+    ${s.bank ? `<div class="bank${s.bankWide ? ' wide' : ''}">${Object.keys(s.bank).map(k =>
+      `<div class="bank-i" data-bank="${k}"><span>(${k})</span>${esc(s.bank[k])}</div>`).join('')}</div>` : ''}
+    ${s.groups.map((g, gi) => (g.passage ? renderPassage(g, gi, s.id) : '') + g.questions.map(renderQ).join('')).join('')}
+  </section>`).join('');
+
+const items = [];
+allQ.forEach(q => (q.notes || []).forEach(nt => items.push({ ...nt, n: q.n })));
+document.getElementById('side').innerHTML = `
+  <p class="side-h">Notes</p>
+  <p class="side-t">本卷重點 ${items.length} 則</p>
+  <ul class="card-list">${items.map(nt => `
+    <li class="card-item"><a href="#q-${nt.n}">
+      <span class="jump">第 ${nt.n} 題</span>
+      <span class="term">${esc(nt.term)}</span><span class="pos">${esc(nt.pos || '')}</span>
+      <div class="gloss">${esc(nt.gloss || '')}</div>
+    </a></li>`).join('')}</ul>
+  <p class="side-note">點任一則可跳到出處題目。用瀏覽器列印（Ctrl／⌘ + P）會自動展開全部詳解與中譯，可直接印成講義。</p>`;
+
+document.getElementById('foot').textContent = `共 ${allQ.length} 題 · ${EXAM.footer}`;
+
+function setOpen(card, open) {
+  card.classList.toggle('open', open);
+  const btn = card.querySelector('.reveal');
+  btn.setAttribute('aria-expanded', open);
+  btn.firstChild.nodeValue = open ? '收合詳解' : '看詳解';
+  const n = card.dataset.n;
+  card.querySelectorAll('.hl').forEach(h => h.classList.toggle('on', open));
+  const ev = document.querySelector(`[data-ev="${n}"]`);
+  if (ev) ev.classList.toggle('on', open);
+  const q = findQ(n);
+  if (q && q.answer && q.answerText) {
+    const bi = document.querySelector(`[data-bank="${q.answer}"]`);
+    if (bi) bi.classList.toggle('used', open);
+  }
+  const bl = document.querySelector(`[data-blank="${n}"]`);
+  if (bl) {
+    if (open) {
+      bl.classList.add('filled');
+      bl.innerHTML = `<sup>${n}</sup><span class="hl">${esc(wordOf(q))}</span>`;
+      requestAnimationFrame(() => bl.querySelector('.hl').classList.add('on'));
+    } else {
+      bl.classList.remove('filled');
+      bl.textContent = n;
+    }
+  }
+}
+document.addEventListener('click', e => {
+  const rv = e.target.closest('.reveal');
+  if (rv) { const c = rv.closest('.q'); setOpen(c, !c.classList.contains('open')); return; }
+  const zb = e.target.closest('.zhbtn');
+  if (zb) { zb.classList.toggle('on'); document.getElementById('zh-' + zb.dataset.zh).classList.toggle('on'); return; }
+  const bl = e.target.closest('.blank');
+  if (bl) {
+    const c = document.getElementById('q-' + bl.dataset.blank);
+    if (!c.classList.contains('open')) setOpen(c, true);
+    c.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+});
+toggleAll.addEventListener('click', () => {
+  const open = toggleAll.textContent === '全部展開';
+  document.querySelectorAll('.q').forEach(c => setOpen(c, open));
+  toggleAll.textContent = open ? '全部收合' : '全部展開';
+});
+window.addEventListener('beforeprint', () => {
+  document.querySelectorAll('.q').forEach(c => setOpen(c, true));
+  document.querySelectorAll('.zhbox').forEach(b => b.classList.add('on'));
+  toggleAll.textContent = '全部收合';
+});
+</script>
+</body>
+</html>
